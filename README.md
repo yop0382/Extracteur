@@ -10,6 +10,7 @@ C:\Users\dev\Documents\charts\bitnami\postgresql-ha>helm install --values values
 
 rabbitmqctl change_password admin 1234
 
-Create queue 'events' binded to 'amq.direct'
+Create queue 'events' binded to 'amq.direct' with mode lazy-queue
+
 Create user postgres passw postgres
 add full perms & vhost / * * *
