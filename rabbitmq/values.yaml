@@ -34,7 +34,7 @@ image:
   ## set to true if you would like to see extra information on logs
   ## It turns BASH and/or NAMI debugging in the image
   ##
-  debug: true
+  debug: false
 
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -203,7 +203,7 @@ extraPlugins: "rabbitmq_auth_backend_ldap"
 clustering:
   ## @param clustering.enabled Enable RabbitMQ clustering
   ##
-  enabled: true
+  enabled: false
   ## @param clustering.addressType Switch clustering mode. Either `ip` or `hostname`
   ##
   addressType: hostname
@@ -270,7 +270,7 @@ extraContainerPorts: []
 ## To add more configuration, use `extraConfiguration` of `advancedConfiguration` instead
 ##
 configuration: |-
-  vm_memory_high_watermark.absolute = 4000MiB
+  vm_memory_high_watermark.absolute = 6000MiB
   {{- if not .Values.loadDefinition.enabled -}}
   ## Username and password
   ##
@@ -408,7 +408,7 @@ extraSecretsPrependReleaseName: false
 
 ## @param replicaCount Number of RabbitMQ replicas to deploy
 ##
-replicaCount: 2
+replicaCount: 1
 
 ## @param schedulerName Use an alternate scheduler, e.g. "stork".
 ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
@@ -545,8 +545,8 @@ resources:
   ##    cpu: 1000m
   ##    memory: 2Gi
   requests: 
-    cpu: 1000m
-    memory: 3Gi
+    cpu: 2000m
+    memory: 6Gi
 
 ## Configure RabbitMQ containers' extra options for liveness probe
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes

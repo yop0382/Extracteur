@@ -3,7 +3,8 @@ CREATE EXTENSION amqp;
 CREATE TABLE commande (
    command_id serial PRIMARY KEY,
    utilisateur TEXT NOT NULL,
-   storage_path TEXT NOT NULL
+   storage_path TEXT NOT NULL,
+   event_state BOOLEAN DEFAULT NULL
 );
 
 CREATE TABLE events (

@@ -133,7 +133,7 @@ postgresql:
   podLabels: {}
   ## @param postgresql.replicaCount Number of replicas to deploy
   ##
-  replicaCount: 2
+  replicaCount: 1
   ## @param postgresql.updateStrategyType Update strategy for PostgreSQL statefulset
   ## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies
   ##
@@ -259,9 +259,9 @@ postgresql:
   ##
   resources:
     ## Example:
-    ## limits:
-    ##    cpu: 250m
-    ##    memory: 256Mi
+    limits:
+      cpu: 4000m
+      memory: 4Gi
     ##
     limits: {}
     ## Examples:
@@ -655,7 +655,7 @@ pgpool:
   sidecars: []
   ## @param pgpool.replicaCount The number of replicas to deploy
   ##
-  replicaCount: 2
+  replicaCount: 1
   ## @param pgpool.podAnnotations Additional pod annotations
   ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   ##
